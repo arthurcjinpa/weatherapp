@@ -14,7 +14,7 @@ public class GeocoderServiceTest extends BaseTest {
         String city = "Moscow";
         int limit = 1;
         //when
-        GeocoderObject geocoderData = geocoderService.getGeocoderData(city, limit);
+        GeocoderObject geocoderData = geocoderService.getGeocoderData(city);
         //then
         assertEquals("Moscow", geocoderData.getName());
     }
