@@ -15,9 +15,9 @@ public class GeocoderService {
 
     private final WebClient webClient;
 
-    public GeocoderObject getGeocoderData(String city, int limit) {
+    public GeocoderObject getGeocoderData(String city) {
         return webClient.get()
-                .uri(String.join("", "geo/1.0/direct?appid={apikey}&q={city}&limit={limit}"), apiKey, city, limit)
+                .uri(String.join("", "geo/1.0/direct?appid={apikey}&q={city}"), apiKey, city)
                 .retrieve()
                 .bodyToMono(GeocoderObject[].class)
                 .map(responseArray -> responseArray[0])
