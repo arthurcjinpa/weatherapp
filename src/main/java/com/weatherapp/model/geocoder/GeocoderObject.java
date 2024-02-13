@@ -1,4 +1,4 @@
-package com.weatherapp.model;
+package com.weatherapp.model.geocoder;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
