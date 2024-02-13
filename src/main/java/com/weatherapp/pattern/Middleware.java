@@ -1,5 +1,7 @@
 package com.weatherapp.pattern;
 
+import com.weatherapp.model.weather.WeatherDataObject;
+
 public abstract class Middleware {
     private Middleware next;
 
@@ -12,12 +14,9 @@ public abstract class Middleware {
         return first;
     }
 
-    public abstract boolean getData(String lat, String lon, String cityName);
+    public abstract WeatherDataObject getData(String lat, String lon, String cityName);
 
-    protected boolean checkNext(String lat, String lon, String cityName) {
-        if (next == null) {
-            return true;
-        }
+    protected WeatherDataObject checkNext(String lat, String lon, String cityName) {
         return next.getData(lat, lon, cityName);
     }
 }
