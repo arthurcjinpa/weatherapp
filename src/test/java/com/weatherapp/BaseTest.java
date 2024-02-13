@@ -1,6 +1,7 @@
 package com.weatherapp;
 
 import com.weatherapp.service.GeocoderService;
+import com.weatherapp.service.WeatherService;
 import org.junit.Ignore;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,4 +13,5 @@ import org.springframework.test.context.junit4.SpringRunner;
 @Ignore
 public class BaseTest {
     @Autowired protected GeocoderService geocoderService;
+    @Autowired protected WeatherService weatherService;
 }
