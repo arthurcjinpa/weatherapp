@@ -1,7 +1,7 @@
 package com.weatherapp.controller;
 
 import com.weatherapp.model.weather.WeatherDataObject;
-import com.weatherapp.pattern.Server;
+import com.weatherapp.chainofresponsibility.Server;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

@@ -1,4 +1,4 @@
-package com.weatherapp.pattern;
+package com.weatherapp.chainofresponsibility;
 
 import com.weatherapp.model.weather.WeatherDataObject;
 

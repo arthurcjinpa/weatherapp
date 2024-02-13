@@ -1,4 +1,4 @@
-package com.weatherapp.pattern;
+package com.weatherapp.chainofresponsibility;
 
 import com.weatherapp.service.GeocoderService;
 import com.weatherapp.service.WeatherService;
