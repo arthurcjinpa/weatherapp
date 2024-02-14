@@ -1,5 +1,6 @@
 package com.weatherapp.chainofresponsibility;
 
+import com.weatherapp.exception.GeocoderException;
 import com.weatherapp.model.geocoder.GeocoderObject;
 import com.weatherapp.model.weather.WeatherDataObject;
 import com.weatherapp.service.GeocoderService;
@@ -22,8 +23,7 @@ public class GeocoderMiddleware extends Middleware {
             LOGGER.info(String.format("Geocoder successfully returned %s lat and %s lon", lat, lon));
             return checkNext(geocoderData.getLat(), geocoderData.getLon(), cityName);
         } catch (Exception ex) {
-            LOGGER.severe("Could not find the city, there may be a mistake in the name.");
-            return null;
+            throw new GeocoderException("Could not find the city, there may be a mistake in the name.");
         }
     }
 }

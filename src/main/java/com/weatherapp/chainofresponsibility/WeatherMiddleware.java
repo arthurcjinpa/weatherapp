@@ -1,5 +1,6 @@
 package com.weatherapp.chainofresponsibility;
 
+import com.weatherapp.exception.WeatherDataException;
 import com.weatherapp.model.weather.WeatherDataObject;
 import com.weatherapp.service.WeatherService;
 import lombok.RequiredArgsConstructor;
@@ -21,8 +22,7 @@ public class WeatherMiddleware extends Middleware {
             LOGGER.info(String.format("Temp in %s is %s celsius", cityName, weatherDataObject.getMain().getTemp()));
             return weatherDataObject;
         } catch (Exception ex) {
-            LOGGER.severe("The website is down or received incorrect data from geocoder, please try again.");
-            return null;
+            throw new WeatherDataException("The website is down or received incorrect data from geocoder, please try again.");
         }
     }
 }
