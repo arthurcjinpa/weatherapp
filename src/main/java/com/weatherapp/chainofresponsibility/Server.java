@@ -1,6 +1,6 @@
 package com.weatherapp.chainofresponsibility;
 
-import com.weatherapp.exception.CustomErrorResponse;
+import com.weatherapp.utils.CustomErrorResponse;
 import com.weatherapp.exception.GeocoderException;
 import com.weatherapp.exception.WeatherDataException;
 import com.weatherapp.model.weather.WeatherDataObject;
@@ -31,7 +31,8 @@ public class Server {
             System.out.println("Data has been retrieved successfully!");
             return ResponseEntity.ok(data);
             // Enricher here
-        }
-        return null;
+        } else {
+            return ResponseEntity.status(HttpStatus.NO_CONTENT)
+                    .body(new CustomErrorResponse("Could not find the data, please try again."));        }
     }
 }

@@ -1,4 +1,4 @@
-package com.weatherapp.exception;
+package com.weatherapp.utils;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
