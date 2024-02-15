@@ -1,8 +1,8 @@
 package com.weatherapp.controller;
 
-import com.weatherapp.model.weather.WeatherDataObject;
 import com.weatherapp.chainofresponsibility.Server;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +16,7 @@ public class ClientController {
     private final Server server;
 
     @GetMapping("/{cityName}")
-    public WeatherDataObject getWeatherData(@PathVariable(value = "cityName") String cityName) {
+    public ResponseEntity<?> getWeatherData(@PathVariable(value = "cityName") String cityName) {
         return server.getWeatherData(null, null, cityName);
     }
 }
